@@ -5,7 +5,7 @@ public enum Categoria {
 	Calças(2),
 	Saias(3),
 	Blusas(4),
-	Shortes(5),
+	Shorts(5),
 	Bermudas(6),
 	Calçados(7),
 	pulseiras(8),
