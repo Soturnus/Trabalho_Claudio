@@ -1,5 +1,6 @@
 package com.ecommerce.dante.entities;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Produto {
 	
 	private String imagem;
 	
+	@Nullable
 	private Integer tamanho;
 	
 	private Double valor;
@@ -25,6 +27,10 @@ public class Produto {
 	private String descricao;
 	
 	private Integer categoria;
+	
+	public Produto(){
+		
+	}
 	
 	public Produto(Integer id, String nome, String imagem, Tamanho tamanho,Categoria categoria, Double valor, String descricao) {
 		super();
@@ -62,14 +68,13 @@ public class Produto {
 	}
 
 	public Tamanho getTamanho() {
-		return Tamanho.valueOf(tamanho);
+		return tamanho != null ? Tamanho.valueOf(tamanho) : null;
 	}
 
 	public void setTamanho(Tamanho tamanho) {
 		if(tamanho != null) {
 			this.tamanho = tamanho.getCodigo();
 		}
-		
 	}
 
 	public Categoria getcategoria() {
